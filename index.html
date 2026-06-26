@@ -40,6 +40,7 @@
     position:absolute; inset:0; display:none; flex-direction:column;
     padding:18px 18px calc(18px + env(safe-area-inset-bottom));
     padding-top:calc(14px + env(safe-area-inset-top)); animation:fade .28s ease;
+    overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain;
   }
   .screen.active{display:flex;}
   @keyframes fade{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;}}
@@ -67,7 +68,7 @@
   #quiz, #result{padding-top:calc(62px + env(safe-area-inset-top));}
 
   /* ============ HOME ============ */
-  #home{justify-content:center; text-align:center; gap:20px; overflow:hidden;}
+  #home{justify-content:safe center; text-align:center; gap:20px; overflow-x:hidden; overflow-y:auto;}
   .sky{position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none;}
   .sun{position:absolute; top:7%; left:50%; width:120px; height:120px; margin-left:-60px; border-radius:50%;
     background:radial-gradient(circle at 50% 50%, #ffe39a, #ffd166 60%, rgba(255,209,102,0)); animation:sunpulse 5s ease-in-out infinite;}
