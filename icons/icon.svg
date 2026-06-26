@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Wise World">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#23a081"/>
+      <stop offset="1" stop-color="#176b58"/>
+    </linearGradient>
+    <linearGradient id="globe" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eaf7f1"/>
+      <stop offset="1" stop-color="#cdeede"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <!-- globe -->
+  <circle cx="256" cy="276" r="132" fill="url(#globe)"/>
+  <g fill="none" stroke="#23a081" stroke-width="9" stroke-linecap="round" opacity="0.85">
+    <path d="M124 276 H388"/>
+    <path d="M150 222 H362"/>
+    <path d="M150 330 H362"/>
+    <path d="M256 144 C190 196 190 356 256 408"/>
+    <path d="M256 144 C322 196 322 356 256 408"/>
+    <ellipse cx="256" cy="276" rx="132" ry="132" stroke-width="11"/>
+  </g>
+
+  <!-- graduation cap -->
+  <g>
+    <path d="M256 96 L404 150 L256 204 L108 150 Z" fill="#1f2d33"/>
+    <path d="M178 178 L178 236 C178 268 334 268 334 236 L334 178 L256 206 Z" fill="#13202a"/>
+    <path d="M404 150 L404 224" fill="none" stroke="#f2a73b" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="404" cy="232" r="14" fill="#f2a73b"/>
+  </g>
+</svg>
