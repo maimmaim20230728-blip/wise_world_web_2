@@ -389,7 +389,7 @@
     answerIndex:1,
     explanation:"Hili ni fumbo la 'kuhesabu kinyumenyume', ambapo unarudisha wakati nyuma kutoka matokeo ili kupata sababu ya awali. Kama kujumlisha 5 kwenye namba kulitoa 12, basi 'kurudisha nyuma na kutoa ile 5 iliyojumlishwa' kutoka 12 ya mwisho kunafichua namba ya awali. 12 toa 5 ni 7. Maishani tatizo linapotokea, uwezo huu wa 'kurudisha wakati nyuma kutoka matokeo hadi sababu' unakuwezesha kugundua kwa werevu wapi ulikosea, au nini kilivunja kifaa, na kukirekebisha." },
   { id:78, topic:"Kununua kwa Bajeti", emoji:"🛍️",
-    question:"Swali la ununuzi! Una 'sarafu 30'. Dukani wanauza kiazi kwa sarafu 10, nyanya kwa sarafu 15, na samaki kwa sarafu 20. Ili kununua sawasawa 'aina 2 za chakula' kwa pesa uliyonayo, utachagua zipi mbili?",
+    question:"Swali la ununuzi! Una 'sarafu 30'. Dukani wanauza kiazi kwa sarafu 10, nyanya kwa sarafu 15, na samaki kwa sarafu 20. Ili kununua 'aina 2 za chakula' na kutumia sarafu zote 30 bila kubaki hata moja, utachagua zipi mbili?",
     choices:["Kiazi na nyanya","Nyanya na samaki","Kiazi na samaki","Hakuna jozi ya mbili inayoweza kununuliwa"],
     answerIndex:2,
     explanation:"Hili ni swali la kufikiri ambapo unatafuta mchanganyiko unaotimiza masharti yenye mipaka (bajeti sarafu 30, aina 2 sawasawa). Jumlisha kila bei. Kiazi sarafu 10 jumlisha nyanya sarafu 15 ni sarafu 25, chini ya 30, na pesa inabaki. Nyanya sarafu 15 jumlisha samaki sarafu 20 ni sarafu 35, ambayo inazidi 30 na haiwezi kununuliwa. Kiazi sarafu 10 jumlisha samaki sarafu 20 ni sarafu 30 sawasawa, ambayo inalingana kabisa na pesa uliyonayo. Hivyo jibu sahihi ni mchanganyiko wa kiazi na samaki. Tumia uwezo wa kuchanganya namba kadhaa kichwani na kupanga ili usizidi bajeti yako." },

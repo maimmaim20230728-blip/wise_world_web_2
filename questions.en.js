@@ -389,7 +389,7 @@
     answerIndex:1,
     explanation:"This is a 'working-backward' puzzle, where you rewind time from the result to find the original cause. If adding 5 to a number gave 12, then 'rewinding and subtracting the 5 that was added' from the final 12 reveals the original number. 12 minus 5 is 7. When trouble happens in life, this 'power to rewind time from result to cause' lets you cleverly pin down where you went wrong, or what caused a tool to break, and repair it." },
   { id:78, topic:"Budget Shopping", emoji:"🛍️",
-    question:"Shopping quiz! You have '30 coins.' The shop sells potatoes for 10 coins, tomatoes for 15 coins, and fish for 20 coins. To buy exactly '2 kinds of food' with the money you have, which two should you pick?",
+    question:"Shopping quiz! You have '30 coins.' The shop sells potatoes for 10 coins, tomatoes for 15 coins, and fish for 20 coins. To buy '2 kinds of food' and spend all 30 coins exactly, with nothing left over, which two should you pick?",
     choices:["Potato and tomato","Tomato and fish","Potato and fish","No pair of two can be bought"],
     answerIndex:2,
     explanation:"This is a thinking quiz where you find the combination that meets the limited conditions (budget 30 coins, exactly 2 kinds). Add up each price. Potato 10 coins plus tomato 15 coins is 25 coins, less than 30, leaving money over. Tomato 15 coins plus fish 20 coins is 35 coins, which goes over 30 and cannot be bought. Potato 10 coins plus fish 20 coins comes to exactly 30 coins, matching the money you have perfectly. So the correct answer is the potato-and-fish combination. Use the power to combine several numbers in your head and plan so as not to exceed your budget." },
