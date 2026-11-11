@@ -47,7 +47,7 @@
 
   .topbar{display:flex; align-items:center; gap:10px; min-height:34px; margin-bottom:6px;}
   .topbar .spacer{flex:1;}
-  .iconbtn{border:none; background:var(--card); color:var(--ink-soft); width:38px; height:38px;
+  .iconbtn{border:none; background:var(--card); color:var(--ink-soft); width:48px; height:48px;
     border-radius:50%; font-size:18px; cursor:pointer; box-shadow:var(--shadow-sm); display:grid; place-items:center;}
   .iconbtn:active{transform:scale(.94);}
   .lv-pill{display:inline-flex; align-items:center; gap:6px; background:var(--brand); color:#fff;
@@ -59,8 +59,8 @@
   .btn-primary:active{background:var(--brand-dark);}
 
   /* top-center buttons: language + sound（中央上部に配置・右上のLV/もんめ表示と重ならない） */
-  .corner-btns{position:fixed; top:calc(18px + env(safe-area-inset-top)); left:50%; transform:translateX(-50%); z-index:40; display:flex; gap:12px;}
-  .corner-btns button{width:42px; height:42px; border-radius:50%; border:none; cursor:pointer;
+  .corner-btns{position:fixed; top:calc(18px + env(safe-area-inset-top)); left:50%; transform:translateX(-50%); z-index:20; display:flex; gap:12px;}   /* 20 = レベルアップ・ことばの窓(30)より下。窓が開いている間は 窓の下に かくれる */
+  .corner-btns button{width:48px; height:48px; border-radius:50%; border:none; cursor:pointer;
     background:rgba(255,255,255,.9); box-shadow:var(--shadow-sm); font-size:19px; display:grid;
     place-items:center; backdrop-filter:blur(3px);}
   .corner-btns button:active{transform:scale(.92);}
@@ -105,8 +105,12 @@
     background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.5),rgba(255,255,255,0)); transform:skewX(-20deg); animation:shine 3.2s ease-in-out infinite;}
   @keyframes shine{0%{left:-60%;} 55%,100%{left:130%;}}
   .home-foot{position:relative; z-index:1; margin-top:6px;}
-  .linkbtn{background:none; border:none; color:var(--ink-soft); font-size:12.5px; text-decoration:underline; cursor:pointer; font-family:inherit;}
+  .linkbtn{background:none; border:none; color:var(--ink-soft); font-size:12.5px; text-decoration:underline; cursor:pointer; font-family:inherit; min-height:48px; min-width:48px; padding:0 14px;}
   .review-note{display:none; font-size:11px; color:var(--ink-soft); text-align:center; max-width:340px; margin:9px auto 0; line-height:1.45; opacity:.85;}
+  .series-note{font-size:12.5px; line-height:1.55; color:var(--ink-soft); text-align:center; max-width:340px; margin:6px auto 4px;}
+  .later-wrap{margin-top:16px;}
+  .later-btn{min-height:48px; font-size:15px; padding:10px 14px; background:var(--card); color:var(--brand-dark); border:2px solid var(--brand); overflow-wrap:anywhere;}
+  .later-btn[disabled]{cursor:default; color:var(--ink-soft); border-color:var(--line);}
   .credit{display:block; margin-top:10px; font-size:11.5px; color:var(--brand-dark); text-decoration:underline; opacity:.9; text-align:center;}
   .credit:active{opacity:.6;}
 
@@ -132,7 +136,7 @@
   .question{font-size:21px; font-weight:800; margin:0 0 18px; text-align:center; word-break:auto-phrase;}
   .choices{display:flex; flex-direction:column; gap:12px; margin-top:auto;}
   .choice{background:var(--card); color:var(--ink); text-align:left; border:2px solid var(--line); border-radius:14px;
-    padding:15px 16px 15px 52px; position:relative; font-size:17px; font-weight:700; box-shadow:var(--shadow-sm); transition:transform .08s;}
+    padding:15px 16px 15px 52px; position:relative; font-family:inherit; font-size:17px; font-weight:700; box-shadow:var(--shadow-sm); transition:transform .08s;}
   .choice:active{transform:scale(.99);}
   .choice .mark{position:absolute; left:13px; top:50%; transform:translateY(-50%); width:26px; height:26px; border-radius:50%;
     background:var(--brand-soft); color:var(--brand-dark); display:grid; place-items:center; font-size:14px; font-weight:800;}
@@ -296,6 +300,7 @@
     </div>
 
     <div class="home-foot">
+      <p class="series-note" id="series-note"></p>
       <button class="linkbtn guide-link" id="guide-btn">?</button>
       <button class="linkbtn" id="reset-btn">reset</button>
       <p class="review-note" id="review-note"></p>
@@ -334,6 +339,7 @@
       <div class="expl" id="expl">
         <h3 id="expl-q"></h3>
         <div id="expl-body"></div>
+        <div class="later-wrap"><button type="button" class="btn later-btn" id="later-btn"></button></div>
       </div>
       <div class="scroll-cue" id="scroll-cue">⌄</div>
     </div>
@@ -472,7 +478,36 @@
       if(QUESTIONS.length===0 && code!=="en"){ QUESTIONS=questionsFor("en"); }
       applyI18n();
       renderHome();
+      refreshOpenQuestion();
     });
+  }
+  // クイズ・解説を ひらいている途中で ことばを かえたら、いまの もんだいも おなじ id で その ことばに かきなおす
+  // （選択肢の ならびと、こたえた あとの 色・解説の いちは そのまま）
+  function renderLaterBtn(){
+    var b=el("later-btn"), done=!!current && state.review.indexOf(current.id)>=0;
+    b.textContent=t(done?"laterDone":"laterBtn"); b.disabled=done;
+  }
+  function refreshOpenQuestion(){
+    if(!current || (currentScreen!=="quiz" && currentScreen!=="result")) return;
+    var q=null; for(var i=0;i<QUESTIONS.length;i++){ if(QUESTIONS[i].id===current.id){ q=QUESTIONS[i]; break; } }
+    if(!q) return;
+    current=q;
+    if(currentScreen==="quiz"){
+      setRich(el("q-topic"), q.topic||"");
+      setRich(el("q-text"), q.question);
+      document.querySelectorAll("#q-choices .choice").forEach(function(b){
+        var orig=parseInt(b.getAttribute("data-orig"),10), mark=b.querySelector(".mark"), txt=q.choices[orig]||"";
+        b.innerHTML=""; if(mark) b.appendChild(mark);
+        if(lang==="ja"){ b.insertAdjacentHTML("beforeend", txt); } else { b.appendChild(document.createTextNode(txt)); }
+      });
+      return;
+    }
+    var v=el("verdict"); v.textContent=v.classList.contains("ok")?t("correct"):t("wrong");
+    setRich(el("expl-q"), q.question);
+    setRich(el("expl-body"), q.explanation);
+    el("reward-hint").textContent=t(earning?"rewardEarned":"rewardPending", pendingExp);
+    renderLaterBtn();
+    if(earning){ nextBtn.textContent=t("earning"); } else { refreshNextButton(); }
   }
   function applyI18n(){
     el("t-tagline").textContent=t("tagline");
@@ -481,6 +516,7 @@
     el("cats-title").textContent=t("catTitle");
     if(currentScreen==="cats") renderCats();
     el("reset-btn").textContent=t("reset");
+    el("series-note").textContent=t("seriesNote");
     el("lu-title").textContent=t("levelUp");
     el("lu-ok").textContent=t("levelUpOk");
     el("lang-title").textContent=t("chooseLang");
@@ -660,6 +696,7 @@
     setRich(el("expl-body"), current.explanation);
     var hint=el("reward-hint"); hint.classList.remove("pop");
     hint.textContent=t("rewardPending", pendingExp);
+    renderLaterBtn();
     renderResultExp(state.level, state.exp);
     explEl.scrollTop=0; earning=false;
     show("result"); startReadLock();
@@ -965,6 +1002,12 @@
     reviewMode=false; state.cat=null; save(); renderHome(); show("home");
   });
   el("reset-btn").addEventListener("click", resetProgress);
+  // 解説から「あとで もういちど」: いまの もんだいを とき直しの入口(state.review)に入れる
+  el("later-btn").addEventListener("click", function(){
+    if(!current || state.review.indexOf(current.id)>=0) return;
+    WiseAudio&&WiseAudio.sfx("tap");
+    state.review.push(current.id); save(); renderLaterBtn(); srSay(t("laterDone"));
+  });
   el("guide-btn").addEventListener("click", function(){ WiseAudio&&WiseAudio.sfx("tap"); openGuide(false); });
   nextBtn.addEventListener("click", function(){ if(nextBtn.disabled) return; WiseAudio&&WiseAudio.sfx("tap"); earnThenAdvance(); });
   el("lu-ok").addEventListener("click", function(){ WiseAudio&&WiseAudio.sfx("tap"); dismissLevelUp(); });

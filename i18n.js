@@ -67,6 +67,9 @@ window.WISE_WORLD_I18N = {
       chooseLang:"ことばを えらぶ",
       credit:"アプリ開発：介護と支援の相談どころ　そよぎ",
       reviewNote:null,
+      seriesNote:"ここは「基礎編」です。もっと やさしい「入門編」と、もっと むずかしい「応用編」も あります。",
+      laterBtn:"🔁 あとで もういちど",
+      laterDone:"✅ いれました（ホームから もういちど できます）",
       /* はじめての あそびかた（初回の案内・2026-09-30）。本文の {start} などは、index.html の guideFill が その言語の画面の文字(t(key))に置き換える */
       guide:{
         title:"あそびかた", step:"{n} / {m}", prev:"まえ", next:"つぎ", start:"あそぶ",
@@ -127,6 +130,9 @@ window.WISE_WORLD_I18N = {
       chooseLang:"Choose language",
       credit:"Developed by Soyogi (Care & Support Consultation)",
       reviewNote:"AI-assisted translation.",
+      seriesNote:"This is the Basic volume. There are also an easier Beginner volume and a harder Advanced volume.",
+      laterBtn:"🔁 Try again later",
+      laterDone:"✅ Saved (find it on the home screen)",
       guide:{
         title:"How to play", step:"{n} / {m}", prev:"Previous", next:"Next", start:"Play",
         again:"Show how to play again",
@@ -186,6 +192,9 @@ window.WISE_WORLD_I18N = {
       chooseLang:"Elegir idioma",
       credit:"Desarrollado por Soyogi (Consultas de cuidado y apoyo)",
       reviewNote:"Traducción asistida por IA.",
+      seriesNote:"Este es el volumen Básico. También hay uno más fácil (Principiante) y otro más difícil (Avanzado).",
+      laterBtn:"🔁 Repetir más tarde",
+      laterDone:"✅ Guardada (la verás en el inicio)",
       guide:{
         title:"Cómo jugar", step:"{n} / {m}", prev:"Anterior", next:"Siguiente", start:"Jugar",
         again:"Ver de nuevo cómo jugar",
@@ -245,6 +254,9 @@ window.WISE_WORLD_I18N = {
       chooseLang:"Choisir la langue",
       credit:"Développé par Soyogi (Consultations de soins et de soutien)",
       reviewNote:"Traduction assistée par IA.",
+      seriesNote:"Ceci est le volume Basique. Il existe aussi un volume plus facile (Débutant) et un plus difficile (Avancé).",
+      laterBtn:"🔁 Revoir plus tard",
+      laterDone:"✅ Enregistrée (à retrouver sur l'accueil)",
       guide:{
         title:"Comment jouer", step:"{n} / {m}", prev:"Précédent", next:"Suivant", start:"Jouer",
         again:"Revoir comment jouer",
@@ -304,6 +316,9 @@ window.WISE_WORLD_I18N = {
       chooseLang:"Escolher idioma",
       credit:"Desenvolvido pela Soyogi (Consultoria de cuidado e apoio)",
       reviewNote:"Tradução assistida por IA.",
+      seriesNote:"Este é o volume Básico. Há também um mais fácil (Iniciante) e um mais difícil (Avançado).",
+      laterBtn:"🔁 Rever mais tarde",
+      laterDone:"✅ Guardada (veja na tela inicial)",
       guide:{
         title:"Como jogar", step:"{n} / {m}", prev:"Anterior", next:"Próximo", start:"Jogar",
         again:"Ver de novo como jogar",
@@ -363,6 +378,9 @@ window.WISE_WORLD_I18N = {
       chooseLang:"Pilih bahasa",
       credit:"Dikembangkan oleh Soyogi (Konsultasi perawatan & dukungan)",
       reviewNote:"Diterjemahkan dengan bantuan AI.",
+      seriesNote:"Ini adalah seri Dasar. Ada juga seri yang lebih mudah (Pemula) dan yang lebih sulit (Lanjutan).",
+      laterBtn:"🔁 Coba lagi nanti",
+      laterDone:"✅ Tersimpan (ada di layar awal)",
       guide:{
         title:"Cara bermain", step:"{n} / {m}", prev:"Kembali", next:"Lanjut", start:"Main",
         again:"Lihat lagi cara bermain",
@@ -422,6 +440,9 @@ window.WISE_WORLD_I18N = {
       chooseLang:"اختر اللغة",
       credit:"تطوير: سويوغي (استشارات الرعاية والدعم)",
       reviewNote:"ترجمة بمساعدة الذكاء الاصطناعي.",
+      seriesNote:"هذا هو الجزء الأساسي. وهناك أيضًا جزء أسهل للمبتدئين وجزء أصعب للمتقدمين.",
+      laterBtn:"🔁 أعد المحاولة لاحقًا",
+      laterDone:"✅ تم الحفظ (ستجدها في الشاشة الرئيسية)",
       guide:{
         title:"طريقة اللعب", step:"{n} / {m}", prev:"السابق", next:"التالي", start:"العب",
         again:"عرض طريقة اللعب مرة أخرى",
@@ -481,6 +502,9 @@ window.WISE_WORLD_I18N = {
       chooseLang:"选择语言",
       credit:"开发：介护与支援咨询处 Soyogi",
       reviewNote:"AI 辅助翻译。",
+      seriesNote:"这里是“基础篇”。还有更简单的“入门篇”和更有挑战的“进阶篇”。",
+      laterBtn:"🔁 稍后再做一次",
+      laterDone:"✅ 已保存（在主页可以再做）",
       guide:{
         title:"玩法说明", step:"{n} / {m}", prev:"上一页", next:"下一页", start:"开始玩",
         again:"再看一次玩法说明",
@@ -540,6 +564,9 @@ window.WISE_WORLD_I18N = {
       chooseLang:"Выбрать язык",
       credit:"Разработано Soyogi (консультации по уходу и поддержке)",
       reviewNote:"Перевод с помощью ИИ.",
+      seriesNote:"Это базовая часть. Есть также более лёгкая (для начинающих) и более трудная (продвинутая).",
+      laterBtn:"🔁 Повторить позже",
+      laterDone:"✅ Сохранено (найдёте на главном экране)",
       guide:{
         title:"Как играть", step:"{n} / {m}", prev:"Назад", next:"Далее", start:"Играть",
         again:"Посмотреть, как играть, ещё раз",
@@ -599,6 +626,9 @@ window.WISE_WORLD_I18N = {
       chooseLang:"भाषा चुनें",
       credit:"विकसित: देखभाल और सहायता परामर्श केंद्र Soyogi",
       reviewNote:"AI की मदद से किया गया अनुवाद।",
+      seriesNote:"यह बुनियादी भाग है। इसके अलावा ज़्यादा आसान शुरुआती भाग और ज़्यादा कठिन उन्नत भाग भी हैं।",
+      laterBtn:"🔁 बाद में फिर से करें",
+      laterDone:"✅ सहेजा गया (होम स्क्रीन पर मिलेगा)",
       guide:{
         title:"कैसे खेलें", step:"{n} / {m}", prev:"पिछला", next:"अगला", start:"खेलें",
         again:"कैसे खेलें, फिर से देखें",
@@ -658,6 +688,9 @@ window.WISE_WORLD_I18N = {
       chooseLang:"ভাষা বেছে নাও",
       credit:"তৈরি: যত্ন ও সহায়তা পরামর্শকেন্দ্র Soyogi",
       reviewNote:"AI-এর সাহায্যে অনূদিত।",
+      seriesNote:"এটি মৌলিক পর্ব। আরও সহজ শুরুর পর্ব এবং আরও কঠিন উন্নত পর্বও আছে।",
+      laterBtn:"🔁 পরে আবার করব",
+      laterDone:"✅ সংরক্ষিত (হোম স্ক্রিনে পাবেন)",
       guide:{
         title:"কীভাবে খেলবে", step:"{n} / {m}", prev:"আগের", next:"পরের", start:"খেলো",
         again:"কীভাবে খেলবে, আবার দেখো",
@@ -717,6 +750,9 @@ window.WISE_WORLD_I18N = {
       chooseLang:"Chagua lugha",
       credit:"Imetengenezwa na Soyogi (ushauri wa malezi na msaada)",
       reviewNote:"Imetafsiriwa kwa msaada wa AI.",
+      seriesNote:"Hili ni toleo la Msingi. Pia kuna toleo rahisi zaidi (Anayeanza) na gumu zaidi (La juu).",
+      laterBtn:"🔁 Jaribu tena baadaye",
+      laterDone:"✅ Imehifadhiwa (utaipata kwenye skrini ya mwanzo)",
       guide:{
         title:"Jinsi ya kucheza", step:"{n} / {m}", prev:"Nyuma", next:"Mbele", start:"Cheza",
         again:"Tazama tena jinsi ya kucheza",
