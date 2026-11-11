@@ -485,6 +485,8 @@
   // （選択肢の ならびと、こたえた あとの 色・解説の いちは そのまま）
   function renderLaterBtn(){
     var b=el("later-btn"), done=!!current && state.review.indexOf(current.id)>=0;
+    // まちがえた ときだけ 出す（ホームの入口は「まちがえた もんだいを もういちど」なので、せいかいした もんだいは 入れない）
+    b.parentNode.hidden=!el("verdict").classList.contains("ng");
     b.textContent=t(done?"laterDone":"laterBtn"); b.disabled=done;
   }
   function refreshOpenQuestion(){

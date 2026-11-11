@@ -318,7 +318,7 @@ window.WISE_WORLD_I18N = {
       reviewNote:"Tradução assistida por IA.",
       seriesNote:"Este é o volume Básico. Há também um mais fácil (Iniciante) e um mais difícil (Avançado).",
       laterBtn:"🔁 Rever mais tarde",
-      laterDone:"✅ Guardada (veja na tela inicial)",
+      laterDone:"✅ Salva (veja na tela inicial)",
       guide:{
         title:"Como jogar", step:"{n} / {m}", prev:"Anterior", next:"Próximo", start:"Jogar",
         again:"Ver de novo como jogar",
